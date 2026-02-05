@@ -1,0 +1,26 @@
+class Student {
+    int regNo, m1, m2, m3;
+    String name;
+
+    Student(int r, String n, int a, int b, int c) {
+        regNo = r; name = n; m1 = a; m2 = b; m3 = c;
+    }
+
+    void display() {
+        int total = m1 + m2 + m3;
+        double avg = total / 3.0;
+        String result = avg >= 50 ? "Pass" : "Fail";
+
+        System.out.println(regNo + " " + name);
+        System.out.println("Total=" + total + " Avg=" + avg + " Result=" + result);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student(1,"Arun",60,70,80);
+        Student s2 = new Student(2,"Meena",40,45,50);
+        s1.display();
+        s2.display();
+    }
+}
