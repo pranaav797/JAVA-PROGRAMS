@@ -1,0 +1,24 @@
+class Account {
+    String name, type;
+    int accNo;
+    double bal;
+    Account(String n, int a, String t, double b) {
+        name=n; accNo=a; type=t; bal=b;
+    }
+    void deposit(double amt){ bal += amt; }
+    void withdraw(double amt){
+        if(amt <= bal) bal -= amt;
+        else System.out.println("Insufficient balance");
+    }
+    void display(){
+        System.out.println(name+" "+accNo+" "+type+" Balance="+bal);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Account a = new Account("Rahul",101,"Savings",5000);
+        a.deposit(1000);
+        a.withdraw(2000);
+        a.display();
+    }
+}
